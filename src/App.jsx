@@ -17,11 +17,11 @@ function App() {
         }));
     };
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!formData.name.trim()) {
-            setError('Item name is required');
+            setError("Item name is required");
+            return;
         }
 
         const newItem = {
@@ -83,10 +83,10 @@ function App() {
                 </form>
             </section>
             <section className='items-section'>
-                <div className='section-heading'>
+                <div className="section-heading">
                     <h2>Item List</h2>
+                    <span className="item-count">{items.length} items</span>
                 </div>
-                <span className='item-count'>{items.length} items</span>
                 {items.length === 0 ? (
                     <div className='empty-state'>
                         <h3>No items yet</h3>
